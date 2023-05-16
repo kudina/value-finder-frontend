@@ -10,7 +10,7 @@ const BannerLand = () => {
           <p className="font-GeorgiaSemiBold text-[60px] leading-[68px]">
             Find the best freelance services to meet your needs
           </p>
-          <p className="mt-[20px] text-[20px] leading-[29px] font-RubikSemiBold ">
+          <p className="mt-[20px] text-[20px] leading-[29px] font-RubikRegular font-[500] ">
             Do you desire to get value for money engaging an Artisan...or offer
             value for money as an Artisan?
           </p>
