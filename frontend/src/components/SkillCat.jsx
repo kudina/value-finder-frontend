@@ -7,46 +7,46 @@ const SkillCat = () => {
         Browse Skill by category
       </p>
       <div className="flex gap-[20px] mt-[20px]">
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/code.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Programming & Tech</p>
         </div>
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/writing.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Writing & Translation</p>
         </div>
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/design.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Graphics & Design</p>
         </div>
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/music.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Music & Entertainment</p>
         </div>
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/group.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Beauty & Lifestyle</p>
         </div>
       </div>
 
       <div className="flex gap-[20px] mt-[20px]">
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/code.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Programming & Tech</p>
         </div>
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/writing.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Writing & Translation</p>
         </div>
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/design.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Graphics & Design</p>
         </div>
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/music.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Music & Entertainment</p>
         </div>
-        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow cursor-pointer">
+        <div className="flex flex-col items-center h-[157px] w-[276px] p-[10px] rounded-[5px] shadow-shadow1 cursor-pointer">
           <img src="/assets/images/group.png" alt="" className="mt-[5px]" />
           <p className="mt-[20px]">Beauty & Lifestyle</p>
         </div>

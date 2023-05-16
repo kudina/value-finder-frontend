@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        shadow: "1px 1px 2px 1px rgba(0, 0, 0, 0.25)",
+        shadow1: "1px 1px 2px 1px rgba(0, 0, 0, 0.25)",
+        shadow2: "0px 4px 4px rgba(0, 0, 0, 0.25)",
       },
       backgroundImage: {
         hero2: "url('../public/assets/images/hero2.svg')",
