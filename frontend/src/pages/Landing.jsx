@@ -1,4 +1,5 @@
 import BannerLand from "../components/BannerLand";
+import FindSkill from "../components/FindSkill";
 import SkillCat from "../components/SkillCat";
 
 const Landing = () => {
@@ -6,6 +7,7 @@ const Landing = () => {
     <div>
       <BannerLand />
       <SkillCat />
+      <FindSkill />
     </div>
   );
 };

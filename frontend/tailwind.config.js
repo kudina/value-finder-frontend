@@ -6,6 +6,10 @@ module.exports = {
       boxShadow: {
         shadow: "1px 1px 2px 1px rgba(0, 0, 0, 0.25)",
       },
+      backgroundImage: {
+        hero2: "url('../public/assets/images/hero2.svg')",
+        hero3: "url('../public/assets/images/hero3.svg')",
+      },
     },
     fontFamily: {
       GeorgiaRegular: ["GeorgiaRegular"],

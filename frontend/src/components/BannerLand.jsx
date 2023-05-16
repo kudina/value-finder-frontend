@@ -4,9 +4,13 @@ const BannerLand = () => {
   return (
     <div className="h-fit w-full bg-green">
       <HeaderLand />
-      <div className="flex justify-between px-[50px] mt-[20px] text-white">
-        <img src="/assets/images/hero1.svg" alt="" className="h-[25rem]" />
-        <div className="w-[60%] mt-[30px]">
+      <div className="flex justify-between pr-[50px] mt-[20px] text-white">
+        <img
+          src="/assets/images/hero1.svg"
+          alt=""
+          className="h-[717px] w-[430px]"
+        />
+        <div className="w-[60%] mt-[82px]">
           <p className="font-GeorgiaSemiBold text-[60px] leading-[68px]">
             Find the best freelance services to meet your needs
           </p>
