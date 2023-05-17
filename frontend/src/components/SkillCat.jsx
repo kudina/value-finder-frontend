@@ -2,7 +2,7 @@ import React from "react";
 
 const SkillCat = () => {
   return (
-    <div className="p-[50px]">
+    <div className="py-[50px] px-[92px] w-full flex flex-col justify-center">
       <p className="font-GeorgiaRegular font-[400] text-[40px] text-black leading-[68px]">
         Browse Skill by category
       </p>
