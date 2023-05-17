@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: {
         hero2: "url('../public/assets/images/hero2.svg')",
         hero3: "url('../public/assets/images/hero3.svg')",
+        loginbg: "url('../public/assets/images/loginbg.svg')"
       },
     },
     fontFamily: {
@@ -27,6 +28,9 @@ module.exports = {
       grey: "#D9D9D9",
       blue: "#3399FE",
       black: "#042001",
+      LoginHeaderTextColor:'#313131',
+      textInputborderColor:'#C8C8C8',
+      tc:'#777777'
     },
     fill: {
       current: "#86888C",
