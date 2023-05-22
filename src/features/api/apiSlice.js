@@ -7,9 +7,16 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
   tagTypes: ["Product", "Category", "SubCategory", "Ads"],
   endpoints: (builder) => ({
+    register: builder.mutation({
+      query: (user) => ({
+        url: "/user/api/v1/register",
+        method: "POST",
+        body: user,
+      }),
+    }),
     login: builder.mutation({
       query: (user) => ({
-        url: "/user/login",
+        url: "/user/api/v1/login",
         method: "POST",
         body: user,
       }),
@@ -17,4 +24,4 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { useLoginMutation } = apiSlice;
+export const { useLoginMutation, useRegisterMutation } = apiSlice;
