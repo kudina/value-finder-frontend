@@ -2,7 +2,7 @@ import React from "react";
 
 const SkillCat = () => {
   return (
-    <div className="lg:mt-20 mt-10 mb-10 lg:mr-10 mr-5 lg:ml-20 ml-5">
+    <div className="lg:mt-20 mt-10 mb-10 lg:mr-20 mr-5 lg:ml-20 ml-5">
       <p className="font-GeorgiaRegular
        font-[400]  text-black lg:text-4xl text-2xl text-center" >
         Browse Skill by category

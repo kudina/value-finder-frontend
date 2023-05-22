@@ -1,7 +1,8 @@
+
 const Login = () => {
   return (
-    <div className="w-screen h-screen flex flex-col md:flex-row justify-between">
-      <div className="flex flex-col w-screen md:w-[50%] justify-around">
+    <div className="w-screen h-screen flex flex-col md:flex-row lg:justify-between justify-center">
+      <div className="flex flex-col w-screen md:w-[50%] lg:justify-around">
         <div className="mx-[35px] md:mx-[70px] mt-[20px] md:mt-0">
           <p className="font-GeorgiaSemiBold  text-LoginHeaderTextColor text-[35px] text-left leading-[50px]">
             Login
@@ -28,19 +29,18 @@ const Login = () => {
               Login
             </button>
           </div>
-          <div className="flex justify-between mt-3 text-tc ">
-            <div>Don’t have an account? Sing up</div>
+          <div className="flex lg:justify-between mt-3 text-tc lg:flex-row  flex-col text-center">
+            <div className="lg:text-[16px] text-[14px]">Don’t have an account? Sign up</div>
 
-            <div>Forgot password? Reset password</div>
+            <div  className="lg:text-[16px] text-[14px]">Forgot password? Reset password</div>
           </div>
         </div>
       </div>
 
-      <div className="mt-[10px]">
-        <img src="/assets/images/loginbg.svg" className=" " />
+      <div className="lg:w-fit w-0">
+        <img src="/assets/images/loginbg.svg"  />
       </div>
     </div>
   );
 };
-
 export default Login;

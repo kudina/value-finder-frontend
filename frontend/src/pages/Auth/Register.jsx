@@ -1,9 +1,11 @@
+import HeaderLand from '../../components/HeaderLand'
 const Register = () => {
   return (
     <div className="w-screen h-screen flex  flex-col md:flex-row justify-between">
+       {/* <HeaderLand/> */}
       <div className="flex flex-col w-screen md:w-[50%]">
         <div className="mx-[35px] md:mx-[70px]">
-          <p className="font-GeorgiaSemiBold  text-LoginHeaderTextColor text-[3.13rem] text-left mt-[70px]  leading-[50px] max-w-[28rem]">
+          <p className="font-GeorgiaSemiBold  text-LoginHeaderTextColor text-[30px] leading-[37px]  lg:text-[3.13rem] text-left mt-[70px]  lg:leading-[50px] max-w-[30rem]">
             Sign up to find work <br /> or post work
           </p>
           <div className="mt-10 flex justify-between">
@@ -74,7 +76,7 @@ const Register = () => {
         </div>
       </div>
 
-      <div className="mt-[10px] md:mt-0">
+      <div className="lg:w-fit w-0">
         <img src="/assets/images/loginbg.svg" />
       </div>
     </div>
