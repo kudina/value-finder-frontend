@@ -96,7 +96,7 @@ const Login = () => {
       </div>
 
       <div className="lg:w-fit w-0">
-        <img src="/assets/images/loginbg.svg" />
+        <img src="/assets/images/loginbg.svg" alt="" />
       </div>
     </div>
   );
