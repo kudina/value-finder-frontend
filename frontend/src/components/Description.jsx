@@ -4,9 +4,9 @@ import "../index.css";
 
 const Description = () => {
   return (
-    <div className="w-full h-fit bg-white flex flex-col items-center justify-center md:flex-row mt-[24.5rem] md:mt-[30rem] md:mt-[10rem] gap-[20px] px-[20px] md:px-[6.25rem] text-black">
-      <div className="md:max-w-[900px] max-w-full h-fit bg-grey rounded-tl-[57px] rounded-br-[57px] py-[30px] px-[20px]">
-        <p className="font-GeorgiaRegular font-[400] text-[40px] leading-[45px] max-w-[468px] ">
+    <div className=" bg-white flex lg:flex-row flex-col  mt-[150px] mb-10   text-black lg:ml-20 lg:mr-20 ml-5 mr-5 ">
+      <div className=" bg-grey  py-[30px] px-[20px] lg:w-[50%]">
+        <p className="font-GeorgiaRegular font-[400] lg:text-[40px] lg:leading-[45px] lg:max-w-[468px] text-[32px] leading-[40px] ">
           A whole world of freelance talent at your fingertip
         </p>
         <div className="mt-[50px]">
@@ -46,10 +46,9 @@ const Description = () => {
           </p>
         </div>
       </div>
-
-      <div className="max-w-[599px] h-full">
+      <div className="lg:w-[50%]">
         {" "}
-        <img src="/assets/images/hero3.svg" alt="" className="w-full h-full" />
+        <img src="/assets/images/hero3.svg" alt="" className="w-full" />
       </div>
     </div>
   );

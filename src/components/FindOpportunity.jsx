@@ -2,14 +2,15 @@ import React from "react";
 
 const FindOpportunity = () => {
   return (
-    <div className="bg-white mt-[40px] pb-[2rem] px-[100px] flex items-center justify-center">
-      <div className="h-fit flex  ">
+    <div className="bg-white mt-[40px] pb-[2rem] px-[20px] md:px-[6.25rem] flex ">
+      <div className="h-fit flex  flex-col md:flex-row">
         <img
-          src="/assets/images/hero4.png"
+          src="/assets/images/hero4.svg"
           alt=""
-          className="w-[52%] max-w-[800px]"
+          className="w-full md:w-[52.1%] md:h-[43.19rem]"
         />
-        <div className="w-[48%] max-w-[736px] h-[691px] bg-blue text-white flex flex-col items-center p-[20px]">
+
+        <div className="w-full md:w-[47.9%] max-w-[736px] bg-blue text-white flex flex-col items-center p-[20px]">
           <p className="font-RubikRegular font-[500] text-[20px] leading-[24px] self-start">
             FOR CLIENTS
           </p>

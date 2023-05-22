@@ -5,7 +5,7 @@ const HeaderLand = () => {
   const [menu, setMenu] = useState(false);
   return (
     <>
-      <div className="hidden md:flex justify-between items-center font-RubikRegular text-[1rem]  text-white  md:px-[5px] md:pt-[20px]">
+      <div className="hidden md:flex ml-20 mr-20 justify-between items-center font-RubikRegular text-[1rem]  text-white  md:px-[5px] md:pt-[20px]">
         <img
           src="/assets/images/logo.png"
           alt=""
@@ -23,12 +23,15 @@ const HeaderLand = () => {
           </div>
           <div className="ml-[20px] lg:ml-[4rem]">
             <Link to={"/login"}>Login</Link>
-            <Link
+            
+              <Link
               to={"/register"}
-              className="py-[5px] px-[12px] bg-orange text-white ml-[20px] rounded-[5px] drop-shadow h-[55px] w-[122px]"
+              className="py-[10px] px-[20px] bg-orange text-white ml-[20px] rounded-[5px] drop-shadow h-[55px] w-[122px]"
             >
               SignUp
             </Link>
+            
+            
           </div>
         </div>
       </div>
