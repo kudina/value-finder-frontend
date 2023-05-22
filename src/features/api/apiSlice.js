@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 // Define our single API slice object
 export const apiSlice = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:500/" }),
   // tagTypes: ["skill"],
   endpoints: (builder) => ({
     register: builder.mutation({
@@ -23,5 +23,4 @@ export const apiSlice = createApi({
     }),
   }),
 });
-
 export const { useLoginMutation, useRegisterMutation } = apiSlice;

@@ -17,7 +17,8 @@ const Login = () => {
     const user = { email, password };
     try {
       const response = await login(user);
-      setFeedBack(response?.data?.msg || response?.error?.data?.msg);
+      console.log(response)
+      setFeedBack(response?.data?.msg);
       setShowFeedBack(true);
       setTimeout(() => {
         setShowFeedBack(false);
