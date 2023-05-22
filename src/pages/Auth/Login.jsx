@@ -27,6 +27,13 @@ const Login = () => {
       }
     } catch (error) {
       console.log(error);
+      if (error?.status === 400) {
+        setFeedBack("There was a network error. Please try again later");
+        setShowFeedBack(true);
+        setTimeout(() => {
+          setShowFeedBack(false);
+        }, 5000);
+      }
     }
   };
 
@@ -40,7 +47,9 @@ const Login = () => {
           <p className="font-GeorgiaSemiBold  text-LoginHeaderTextColor text-[35px] text-left leading-[50px]">
             Login
           </p>
-
+          {!isChecking && showFeedBack && (
+            <p className="text-[#FF0000] text-[14px] mt-2">{feedBack}</p>
+          )}
           <div className="mt-5">
             <input
               placeholder="Email address"
@@ -67,11 +76,8 @@ const Login = () => {
 
           <div className="mt-5">
             <button className="w-full bg-green text-white p-3 rounded-[5px] h-[55px] ">
-              Login
+              {isChecking ? "Checking details..." : "Login"}
             </button>
-            {!isChecking && showFeedBack && (
-              <p className="text-green text-[14px] mt-2">{feedBack}</p>
-            )}
           </div>
           <div className="flex lg:justify-between mt-3 text-tc lg:flex-row  flex-col text-center">
             <div className="lg:text-[16px] text-[14px]">

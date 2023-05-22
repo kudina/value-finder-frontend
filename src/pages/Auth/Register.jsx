@@ -36,7 +36,6 @@ const Register = () => {
       const response = await register(user).unwrap();
 
       setFeedBack(response?.msg);
-      console.log(response);
       setShowFeedBack(true);
       setTimeout(() => {
         setShowFeedBack(false);
@@ -46,6 +45,13 @@ const Register = () => {
       }
     } catch (error) {
       console.log(error);
+      if (error?.status === 400) {
+        setFeedBack("There was a network error. Please try again later");
+        setShowFeedBack(true);
+        setTimeout(() => {
+          setShowFeedBack(false);
+        }, 5000);
+      }
     }
   };
   return (
@@ -55,6 +61,9 @@ const Register = () => {
           <p className="font-GeorgiaSemiBold  text-LoginHeaderTextColor text-[30px] leading-[37px]  lg:text-[3.13rem] text-left mt-[70px]  lg:leading-[50px] max-w-[30rem]">
             Sign up to find work <br /> or post work
           </p>
+          {!isRegistering && showFeedBack && (
+            <p className="text-[#FF0000] text-[14px] mt-2">{feedBack}</p>
+          )}
           <div className="mt-10 flex justify-between">
             <input
               placeholder="First name"
@@ -193,12 +202,8 @@ const Register = () => {
 
           <div className="mt-5">
             <button className="w-full bg-green text-white p-3 rounded-[5px] h-[55px] ">
-              Sign Up
+              {isRegistering ? "Signing Up..." : "Sign Up"}
             </button>
-
-            {!isRegistering && showFeedBack && (
-              <p className="text-green text-[14px] mt-2">{feedBack}</p>
-            )}
           </div>
 
           <div>
