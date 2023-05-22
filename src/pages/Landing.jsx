@@ -6,7 +6,7 @@ import SkillCat from "../components/SkillCat";
 
 const Landing = () => {
   return (
-    <div>
+    <div className="mt-0">
       <BannerLand />
       <SkillCat />
       <FindSkill />
