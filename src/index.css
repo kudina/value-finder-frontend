@@ -1,10 +1,4 @@
 @font-face {
-  font-family: "GeorgiaBold";
-  src: local("GeorgiaBold"),
-    url("./fonts/Georgia/georgiabold.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "GeorgiaSemiBold";
   src: local("GeorgiaSemiBold"),
     url("./fonts/Georgia/Georgia.ttf") format("truetype");
@@ -14,12 +8,6 @@
   font-family: "GeorgiaRegular";
   src: local("GeorgiaRegular"),
     url("./fonts/Georgia/GeorgiaRegularfont.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "RubikBold";
-  src: local("RubikBold"),
-    url("./fonts/Rubik/Rubik-Bold.ttf") format("truetype");
 }
 
 @font-face {

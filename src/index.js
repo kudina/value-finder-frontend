@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./fonts/Georgia/Georgia.ttf";
-import "./fonts/Georgia/georgiabold.ttf";
 import "./fonts/Georgia/GeorgiaRegularfont.ttf";
-import "./fonts/Rubik/Rubik-Bold.ttf";
 import "./fonts/Rubik/Rubik-Medium.ttf";
 import "./fonts/Rubik/Rubik-Regular.ttf";
 
