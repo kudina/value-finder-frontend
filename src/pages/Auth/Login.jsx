@@ -23,6 +23,7 @@ const Login = () => {
         setShowFeedBack(false);
       }, 5000);
       if (response?.data?.msg === "Login Successful") {
+        localStorage.setItem("accessToken", response?.data?.accessToken);
         navigate("/dashboard");
       }
     } catch (error) {

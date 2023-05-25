@@ -1,6 +1,18 @@
+import {
+  useGetCurrentUserQuery,
+  useGetPostsQuery,
+} from "../../features/api/apiSlice";
+
 const Index = () => {
+  const { data: currentUser, isSuccess } = useGetCurrentUserQuery();
+  const { data: posts } = useGetPostsQuery();
+
+  console.log(posts);
+
   return (
     <div className="">
+      {/* Header */}
+
       <div className="flex justify-between items-center p-[36px]">
         <div className="font-RubikRegular font-[500] text-[1.56rem] leading-[30px] text-greyBlack">
           Welcome Back, Let’s find you a Job
@@ -27,10 +39,11 @@ const Index = () => {
             />
             <div>
               <p className="font-RubikRegular font-[500] text-[1.56rem] leading-[30px] text-greyBlack">
-                Uhembe Nelson
+                {isSuccess &&
+                  currentUser?.firstName + " " + currentUser?.lastName}
               </p>
-              <p className="font-RubikRegular font-[400] text-[1rem] leading-[19px] text-lightGrey">
-                uhembenelson@gmail.com
+              <p className="font-RubikRegular font-[400] text-[1rem] leading-[19px] text-lightGrey break-words w-full">
+                {isSuccess && currentUser?.email}
               </p>
             </div>
             <img
@@ -41,7 +54,9 @@ const Index = () => {
           </div>
         </div>
       </div>
+      {/* Main Section */}
       <div className="flex w-full gap-[50px]">
+        {/* Left Panel */}
         <div className="w-[25%] pl-[36px]">
           <div className="flex justify-between flex-wrap items-center bg-green h-fit w-full  rounded-[21px] px-[17px] py-[20px]">
             <p className="font-RubikRegular font-[500] text-white text-[1.13rem] leading-[21px]">
@@ -83,7 +98,7 @@ const Index = () => {
                 Expert
               </div>
             </div>
-            <div className="mt-[11px] font-RubikRegular font-[300] text-[0.75rem] text-lightGrey leading-[14px]">
+            <div className="mt-[11px] font-RubikRegular font-[300] text-[0.75rem] text-lightGrey leading-[16px]">
               Requirements: Must understand Agile Development methodology, must
               have a degree in web development must be passionate about
               resolving user pain ......
@@ -130,7 +145,7 @@ const Index = () => {
                 Expert
               </div>
             </div>
-            <div className="mt-[11px] font-RubikRegular font-[300] text-[0.75rem] text-lightGrey leading-[14px]">
+            <div className="mt-[11px] font-RubikRegular font-[300] text-[0.75rem] text-lightGrey leading-[16px]">
               Requirements: Must understand Agile Development methodology, must
               have a degree in web development must be passionate about
               resolving user pain ......
@@ -178,7 +193,7 @@ const Index = () => {
                 Expert
               </div>
             </div>
-            <div className="mt-[11px] font-RubikRegular font-[300] text-[0.75rem] text-lightGrey leading-[14px]">
+            <div className="mt-[11px] font-RubikRegular font-[300] text-[0.75rem] text-lightGrey leading-[16px]">
               Requirements: Must understand Agile Development methodology, must
               have a degree in web development must be passionate about
               resolving user pain ......
@@ -194,7 +209,9 @@ const Index = () => {
             </div>
           </div>
         </div>
+        {/* Middle Panel */}
         <div className="w-[50%]">
+          {/* Search Box */}
           <div className="h-[3.81rem] rounded-[21px] bg-boxGrey w-full flex items-center px-[10px] mb-[35px]">
             <img
               src="/assets/images/search.png"
@@ -207,80 +224,89 @@ const Index = () => {
               className="grow font-RubikRegular font-[300] text-[1.13rem] text-black leading-[21px] placeholder-black p-[5px] bg-boxGrey outline-0"
             />
           </div>
-
-          <div className="w-full bg-boxGrey rounded-[21px] px-[25px] pt-[30px] pb-[50px]">
-            <div className="flex items-center">
-              <img
-                src="/assets/images/dp2.png"
-                alt=""
-                className="w-[3.75rem] h-[3.75rem] mr-[13px]"
-              />
-              <div>
-                <p className="font-RubikRegular font-[400] text-[0.88rem] text-greyBlack leading-[17px]">
-                  Adidas Studios
-                </p>
+          {/* All Posts */}
+          {posts?.data?.map((post) => (
+            <div
+              key={post?._id}
+              className="w-full bg-boxGrey rounded-[21px] px-[25px] pt-[30px] pb-[50px] mb-[35px]"
+            >
+              <div className="flex items-center">
+                <img
+                  src="/assets/images/dp2.png"
+                  alt=""
+                  className="w-[3.75rem] h-[3.75rem] mr-[13px]"
+                />
+                <div>
+                  <p className="font-RubikRegular font-[400] text-[0.88rem] text-greyBlack leading-[17px]">
+                    Adidas Studios
+                  </p>
+                  <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
+                    Frontend Designer
+                  </p>
+                  <p className="font-RubikRegular font-[400] text-[0.75rem] text-lightGrey leading-[14px]">
+                    No 40, ID Gyan House, Jos
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center mt-[18px]">
+                <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-fit rounded-[5px] px-[15px] text-center">
+                  <p>Salary</p>
+                  <p>$10/hour</p>
+                </div>
+                <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-fit rounded-[5px] px-[15px] text-center">
+                  <p>Job-Type</p>
+                  <p>Part-Time</p>
+                </div>
+                <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-fit rounded-[5px] px-[15px] text-center">
+                  <p>Number of Applicants</p>
+                  <p>20</p>
+                </div>
+                <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white w-fit rounded-[5px] px-[15px] text-center">
+                  <p>Skill</p>
+                  <p>Expert</p>
+                </div>
+              </div>
+              <div className="mt-[19px] w-full">
                 <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
-                  Frontend Designer
+                  Job Description
                 </p>
-                <p className="font-RubikRegular font-[400] text-[0.75rem] text-lightGrey leading-[14px]">
-                  No 40, ID Gyan House, Jos
+                <p className=" font-RubikRegular font-[300] text-[1.13rem] text-[#8E8E8E] leading-[23px] mt-[8px]">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap
                 </p>
               </div>
-            </div>
-            <div className="flex items-center mt-[18px]">
-              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-fit rounded-[5px] px-[15px] text-center">
-                <p>Salary</p>
-                <p>$10/hour</p>
+              <div className="mt-[19px] w-full">
+                <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
+                  Requirements
+                </p>
+                <p className=" font-RubikRegular font-[300] text-[1.13rem] text-[#8E8E8E] leading-[23px] mt-[8px]">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap
+                </p>
+                <p className=" font-RubikRegular font-[300] text-[1.13rem] text-[#8E8E8E] leading-[23px] mt-[8px]">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap
+                </p>
               </div>
-              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-fit rounded-[5px] px-[15px] text-center">
-                <p>Job-Type</p>
-                <p>Part-Time</p>
-              </div>
-              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-fit rounded-[5px] px-[15px] text-center">
-                <p>Number of Applicants</p>
-                <p>20</p>
-              </div>
-              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white w-fit rounded-[5px] px-[15px] text-center">
-                <p>Skill</p>
-                <p>Expert</p>
-              </div>
+              <button className="w-full rounded-[21px] bg-green text-white mt-[39px] py-[16px]">
+                Apply Now
+              </button>
             </div>
-            <div className="mt-[19px] w-full">
-              <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
-                Job Description
-              </p>
-              <p className=" font-RubikRegular font-[300] text-[1.13rem] text-[#8E8E8E] leading-[21px] mt-[8px]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap
-              </p>
-            </div>
-            <div className="mt-[19px] w-full">
-              <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
-                Requirements
-              </p>
-              <p className=" font-RubikRegular font-[300] text-[1.13rem] text-[#8E8E8E] leading-[21px] mt-[8px]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap
-              </p>
-              <p className=" font-RubikRegular font-[300] text-[1.13rem] text-[#8E8E8E] leading-[21px] mt-[8px]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap
-              </p>
-            </div>
-            <button className="w-full rounded-[21px] bg-green text-white mt-[39px] py-[16px]">
-              Apply Now
-            </button>
-          </div>
+          ))}
         </div>
+        {/* Right Panel */}
         <div className="w-[25%] pr-[44px]">
           <div className="w-full bg-boxGrey flex flex-col items-center text-center py-[31px] rounded-[21px]">
             <img src="/assets/images/dp2.png" alt="" />
@@ -299,24 +325,24 @@ const Index = () => {
               </button>
             </div>
           </div>
-          <div className="bg-boxGrey mt-[27px] p-[20px] rounded-[21px]">
-            <div className="flex gap-[14px]">
-              <div className="bg-white rounded-[10px] p-[15px]">
+          <div className="bg-boxGrey mt-[27px] p-[20px] rounded-[21px] text-center">
+            <div className="flex gap-[14px] ">
+              <div className="bg-white rounded-[10px] p-[10px] w-[48%]">
                 <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                   Interviews
                 </p>
-                <p className="font-RubikRegular font-[600] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
                   10
                 </p>
                 <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                   Interviews
                 </p>
               </div>
-              <div className="bg-white rounded-[10px] p-[15px]">
+              <div className="bg-white rounded-[10px] p-[10px] w-[48%]">
                 <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                   Profile views
                 </p>
-                <p className="font-RubikRegular font-[600] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
                   200
                 </p>
                 <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
@@ -324,45 +350,45 @@ const Index = () => {
                 </p>
               </div>
             </div>
-            <div className="bg-white w-full p-[15px] flex flex-col items-center mt-[17px] rounded-[10px]">
+            <div className="bg-white w-full p-[10px] flex flex-col items-center mt-[17px] rounded-[10px]">
               <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                 Experience
               </p>
-              <p className="font-RubikRegular font-[600] text-[1.13rem] text-black leading-[21px] py-[15px]">
+              <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
                 12
               </p>
               <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                 Years
               </p>
             </div>
-            <div className="bg-white w-full p-[15px] flex flex-col items-center mt-[17px] rounded-[10px]">
+            <div className="bg-white w-full p-[10px] flex flex-col items-center mt-[17px] rounded-[10px]">
               <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                 Applied Jobs
               </p>
-              <p className="font-RubikRegular font-[600] text-[1.13rem] text-black leading-[21px] py-[15px]">
+              <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
                 12
               </p>
               <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                 Jobs
               </p>
             </div>
-            <div className="flex gap-[14px] mt-[17px]">
-              <div className="bg-white rounded-[10px] p-[15px]">
+            <div className="flex gap-[14px] mt-[17px] ">
+              <div className="bg-white rounded-[10px] p-[10px] w-[48%]">
                 <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                   Jobs Completed
                 </p>
-                <p className="font-RubikRegular font-[600] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
                   20
                 </p>
                 <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                   Complete
                 </p>
               </div>
-              <div className="bg-white rounded-[10px] p-[15px]">
+              <div className="bg-white rounded-[10px] p-[10px] w-[48%]">
                 <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
                   Jobs in Progress
                 </p>
-                <p className="font-RubikRegular font-[600] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
                   2
                 </p>
                 <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">

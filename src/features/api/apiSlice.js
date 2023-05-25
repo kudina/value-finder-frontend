@@ -6,6 +6,12 @@ export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://rich-gold-goldfish.cyclic.app",
+    prepareHeaders: (headers) => {
+      headers.set(
+        "Authorization",
+        `Bearer ${localStorage.getItem("accessToken")}`
+      );
+    },
   }),
   // tagTypes: ["skill"],
   endpoints: (builder) => ({
@@ -23,7 +29,22 @@ export const apiSlice = createApi({
         body: user,
       }),
     }),
+    getCurrentUser: builder.query({
+      query: () => ({
+        url: "/user/api/v1/current-user",
+      }),
+    }),
+    getPosts: builder.query({
+      query: () => ({
+        url: "/post/api/v1/get-all-post",
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation, useRegisterMutation } = apiSlice;
+export const {
+  useLoginMutation,
+  useRegisterMutation,
+  useGetCurrentUserQuery,
+  useGetPostsQuery,
+} = apiSlice;
