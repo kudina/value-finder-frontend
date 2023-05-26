@@ -19,13 +19,13 @@ const Index = () => {
         <div className="font-RubikRegular font-[500] text-[1.56rem] leading-[30px] text-greyBlack">
           Welcome Back, Let’s find you a Job
         </div>
-        <div className="flex items-center mt-[35px] md:mt-0">
-          <div className="w-[139px] flex  py-[5px]  border-r-lightGrey border-r-[1px] mr-[24px]">
-            <div className="h-[3.13rem] w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[10px]">
-              <FaRegEnvelope className="text-orange font-[200] h-[2rem] w-[1.63rem]" />
+        <div className="flex flex-col-reverse md:flex-row items-center mt-[35px] md:mt-0">
+          <div className="w-[139px] hidden md:flex  py-[5px]  md:border-r-lightGrey md:border-r-[1px]  md:mr-[24px]">
+            <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[10px]">
+              <FaRegEnvelope className="text-orange font-[200] h-[1.5rem] md:h-[2rem] w-[0.8rem] md:w-[1.63rem]" />
             </div>
-            <div className="h-[3.13rem] w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px]">
-              <FaRegBell className="text-orange font-[200] h-[1.63rem] w-[1.5rem]" />
+            <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px]">
+              <FaRegBell className="text-orange font-[200] h-[1.13rem] md:h-[1.63rem] w-[0.8rem] md:w-[1.5rem]" />
             </div>
           </div>
 
@@ -36,13 +36,21 @@ const Index = () => {
               className="h-[3.75rem] w-[3.75rem] mr-[15px]"
             />
             <div>
-              <p className="font-RubikRegular font-[500] text-[1.4rem] md:text-[1.56rem] leading-[30px] text-greyBlack">
+              <p className="font-RubikRegular font-[500] text-[1.2rem] md:text-[1.56rem] leading-[30px] text-greyBlack">
                 {isSuccess &&
                   currentUser?.firstName + " " + currentUser?.lastName}
               </p>
-              <p className="font-RubikRegular font-[400] text-[0.8rem] md:text-[1rem] leading-[19px] text-lightGrey break-words w-full">
+              <p className="font-RubikRegular font-[400] text-[0.8rem] md:text-[1rem] leading-[19px] text-lightGrey break-words w-[80%] md:w-full">
                 {isSuccess && currentUser?.email}
               </p>
+              <div className="w-[139px] flex md:hidden  py-[5px]  self-start  md:border-r-lightGrey md:border-r-[1px]  md:mr-[24px]">
+                <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[10px]">
+                  <FaRegEnvelope className="text-orange font-[200] h-[1.5rem] md:h-[2rem] w-[0.8rem] md:w-[1.63rem]" />
+                </div>
+                <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px]">
+                  <FaRegBell className="text-orange font-[200] h-[1.13rem] md:h-[1.63rem] w-[0.8rem] md:w-[1.5rem]" />
+                </div>
+              </div>
             </div>
             <div>
               <FaAngleDown className="text-grey w-[10px] h-[27px]" />
