@@ -19,9 +19,9 @@ const Index = () => {
         <div className="font-RubikRegular font-[500] text-[1.56rem] leading-[30px] text-greyBlack">
           Welcome Back, Let’s find you a Job
         </div>
-        <div className="flex flex-col-reverse md:flex-row items-center mt-[35px] md:mt-0">
-          <div className="w-[139px] hidden md:flex  py-[5px]  md:border-r-lightGrey md:border-r-[1px]  md:mr-[24px]">
-            <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[10px]">
+        <div className="flex  items-center mt-[35px] md:mt-0">
+          <div className="md:w-[139px] flex  py-[5px]  md:border-r-lightGrey md:border-r-[1px]  mr-[4px] md:mr-[24px]">
+            <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[4px] md:mr-[10px]">
               <FaRegEnvelope className="text-orange font-[200] h-[1.5rem] md:h-[2rem] w-[0.8rem] md:w-[1.63rem]" />
             </div>
             <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px]">
@@ -29,36 +29,29 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="flex items-center">
+          <div
+            className="flex items-center cursor-pointer"
+            onClick={() => setShowProfile(!showProfile)}
+          >
             <img
               src="/assets/images/dp1.png"
               alt=""
-              className="h-[3.75rem] w-[3.75rem] mr-[15px]"
+              className="h-[3.5rem] w-[3.5rem] md:h-[3.75rem] md:w-[3.75rem] mr-[4px] md:mr-[15px]"
             />
             <div>
               <p className="font-RubikRegular font-[500] text-[1.2rem] md:text-[1.56rem] leading-[30px] text-greyBlack">
                 {isSuccess &&
                   currentUser?.firstName + " " + currentUser?.lastName}
               </p>
-              <p className="font-RubikRegular font-[400] text-[0.8rem] md:text-[1rem] leading-[19px] text-lightGrey break-words w-full">
+              <p className="font-RubikRegular font-[400] text-[0.8rem] md:text-[1rem] leading-[19px] text-lightGrey break-words w-[90%] md:w-full">
                 {isSuccess && currentUser?.email}
               </p>
-              <div className="w-[139px] flex md:hidden  py-[5px]  self-start  md:border-r-lightGrey md:border-r-[1px]  md:mr-[24px]">
-                <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[10px]">
-                  <FaRegEnvelope className="text-orange font-[200] h-[1.5rem] md:h-[2rem] w-[0.8rem] md:w-[1.63rem]" />
-                </div>
-                <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px]">
-                  <FaRegBell className="text-orange font-[200] h-[1.13rem] md:h-[1.63rem] w-[0.8rem] md:w-[1.5rem]" />
-                </div>
-              </div>
             </div>
-            <div onClick={() => setShowProfile(!showProfile)}>
-              <FaAngleDown
-                className={`text-grey w-[10px] h-[27px] ml-[10px] ${
-                  showProfile && "rotate-180"
-                }`}
-              />
-            </div>
+            <FaAngleDown
+              className={`text-grey w-[4rem] h-[4rem] md:w-[10px] md:h-[27px] md:ml-[10px] ${
+                showProfile && "rotate-180"
+              }`}
+            />
           </div>
         </div>
         <div
@@ -211,10 +204,10 @@ const Index = () => {
                 </div>
               </div>
               <div className="flex items-center mt-[18px] flex-wrap gap-y-[10px]">
-                <div className="font-RubikRegular font-[400] text-[0.63rem] text-black p-[7px] bg-white mr-[30px] w-[5.06rem] text-center">
+                <div className="font-RubikRegular font-[400] text-[0.63rem] text-black p-[7px] bg-white mr-[10px] md:mr-[30px] w-[5.06rem] text-center">
                   {post?.salary}
                 </div>
-                <div className="font-RubikRegular font-[400] text-[0.63rem] text-black p-[7px] bg-white mr-[30px] w-[5.06rem] text-center">
+                <div className="font-RubikRegular font-[400] text-[0.63rem] text-black p-[7px] bg-white mr-[10px] md:mr-[30px] w-[5.06rem] text-center">
                   Part-Time
                 </div>
                 <div className="font-RubikRegular font-[400] text-[0.63rem] text-black p-[7px] bg-white w-[5.06rem] text-center">
@@ -275,19 +268,19 @@ const Index = () => {
               </div>
             </div>
             <div className="flex items-center mt-[18px] flex-wrap gap-y-[10px]">
-              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-fit rounded-[5px] px-[15px] text-center">
+              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-[6rem] rounded-[5px] px-[15px] text-center">
                 <p>Salary</p>
                 <p>$10/hour</p>
               </div>
-              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-fit rounded-[5px] px-[15px] text-center">
+              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-[6rem] rounded-[5px] px-[15px] text-center">
                 <p>Job-Type</p>
                 <p>Part-Time</p>
               </div>
-              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-fit rounded-[5px] px-[15px] text-center">
+              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white mr-[30px] w-[6rem] rounded-[5px] px-[15px] text-center">
                 <p>Number of Applicants</p>
                 <p>20</p>
               </div>
-              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white w-fit rounded-[5px] px-[15px] text-center">
+              <div className="font-RubikRegular font-[400] text-[0.63rem] text-black py-[4px] bg-white w-[6rem] rounded-[5px] px-[15px] text-center">
                 <p>Skill</p>
                 <p>Expert</p>
               </div>
