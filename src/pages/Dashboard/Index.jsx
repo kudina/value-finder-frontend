@@ -62,26 +62,100 @@ const Index = () => {
           </div>
         </div>
         <div
-          className={`relative w-full mb-[100px] md:hidden ${
+          className={`relative w-full mb-[60px] md:hidden ${
             !showProfile && "hidden"
           }`}
         >
-          <div className="w-full bg-boxGrey flex flex-col items-center text-center py-[31px] rounded-[21px] absolute left-0 right-0 top-[20px]">
-            <img src="/assets/images/dp2.png" alt="" />
-            <div className="mt-[11px]">
-              <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
-                {isSuccess &&
-                  currentUser?.firstName + " " + currentUser?.lastName}
-              </p>
-              <p className="font-RubikRegular font-[300] text-[0.88rem] text-greyBlack leading-[17px] mt-[4px]">
-                UI/UX Designer
-              </p>
-              <p className="font-RubikRegular font-[400] text-[0.75rem] text-lightGrey leading-[14px] mt-[4px]">
-                No 20 Church Street Jos
-              </p>
-              <button className="mt-[19px] w-full font-RubikRegular font-[500] text-[0.88rem] text-black bg-white rounded-[5px] py-[8px]">
-                Edit Profile
-              </button>
+          <div className="w-full md:w-[25%] md:pr-[44px] absolute left-0 right-0 top-[20px]">
+            <div className="w-full bg-boxGrey flex flex-col items-center text-center py-[31px] rounded-[21px]">
+              <img src="/assets/images/dp2.png" alt="" />
+              <div className="mt-[11px]">
+                <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
+                  {isSuccess &&
+                    currentUser?.firstName + " " + currentUser?.lastName}
+                </p>
+                <p className="font-RubikRegular font-[300] text-[0.88rem] text-greyBlack leading-[17px] mt-[4px]">
+                  UI/UX Designer
+                </p>
+                <p className="font-RubikRegular font-[400] text-[0.75rem] text-lightGrey leading-[14px] mt-[4px]">
+                  No 20 Church Street Jos
+                </p>
+                <button className="mt-[19px] w-full font-RubikRegular font-[500] text-[0.88rem] text-black bg-white rounded-[5px] py-[8px]">
+                  Edit Profile
+                </button>
+              </div>
+            </div>
+            <div className="bg-boxGrey mt-[27px] p-[20px] rounded-[21px] text-center ">
+              <div className="flex gap-[14px] ">
+                <div className="bg-white rounded-[10px] p-[10px] w-[48%]">
+                  <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                    Interviews
+                  </p>
+                  <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                    10
+                  </p>
+                  <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                    Interviews
+                  </p>
+                </div>
+                <div className="bg-white rounded-[10px] p-[10px] w-[48%]">
+                  <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                    Profile views
+                  </p>
+                  <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                    200
+                  </p>
+                  <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                    Views
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white w-full p-[10px] flex flex-col items-center mt-[17px] rounded-[10px]">
+                <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                  Experience
+                </p>
+                <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                  12
+                </p>
+                <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                  Years
+                </p>
+              </div>
+              <div className="bg-white w-full p-[10px] flex flex-col items-center mt-[17px] rounded-[10px]">
+                <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                  Applied Jobs
+                </p>
+                <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                  12
+                </p>
+                <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                  Jobs
+                </p>
+              </div>
+              <div className="flex gap-[14px] mt-[17px] ">
+                <div className="bg-white rounded-[10px] p-[10px] w-[48%]">
+                  <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                    Jobs Completed
+                  </p>
+                  <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                    20
+                  </p>
+                  <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                    Complete
+                  </p>
+                </div>
+                <div className="bg-white rounded-[10px] p-[10px] w-[48%]">
+                  <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                    Jobs in Progress
+                  </p>
+                  <p className="font-RubikRegular font-[500] text-[1.13rem] text-black leading-[21px] py-[15px]">
+                    2
+                  </p>
+                  <p className="font-RubikRegular font-[400] text-[0.75rem] text-black leading-[14px]">
+                    Jobs
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -255,8 +329,8 @@ const Index = () => {
           </div>
         </div>
         {/* Right Panel */}
-        <div className="w-full md:w-[25%] md:pr-[44px] ">
-          <div className="w-full bg-boxGrey md:flex flex-col items-center text-center py-[31px] rounded-[21px] hidden">
+        <div className="w-full md:w-[25%] md:pr-[44px] hidden md:block">
+          <div className="w-full bg-boxGrey md:flex flex-col items-center text-center py-[31px] rounded-[21px]">
             <img src="/assets/images/dp2.png" alt="" />
             <div className="mt-[11px]">
               <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
