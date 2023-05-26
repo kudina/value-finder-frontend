@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   useGetCurrentUserQuery,
   useGetPostsQuery,
@@ -6,10 +7,9 @@ import {
 import { FaRegBell, FaRegEnvelope, FaAngleDown } from "react-icons/fa";
 
 const Index = () => {
+  const [showProfile, setShowProfile] = useState(false);
   const { data: currentUser, isSuccess } = useGetCurrentUserQuery();
   const { data: posts } = useGetPostsQuery();
-
-  console.log(posts);
 
   return (
     <div className="px-[35px] md:px-0">
@@ -40,7 +40,7 @@ const Index = () => {
                 {isSuccess &&
                   currentUser?.firstName + " " + currentUser?.lastName}
               </p>
-              <p className="font-RubikRegular font-[400] text-[0.8rem] md:text-[1rem] leading-[19px] text-lightGrey break-words w-[80%] md:w-full">
+              <p className="font-RubikRegular font-[400] text-[0.8rem] md:text-[1rem] leading-[19px] text-lightGrey break-words w-full">
                 {isSuccess && currentUser?.email}
               </p>
               <div className="w-[139px] flex md:hidden  py-[5px]  self-start  md:border-r-lightGrey md:border-r-[1px]  md:mr-[24px]">
@@ -52,8 +52,36 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div>
-              <FaAngleDown className="text-grey w-[10px] h-[27px]" />
+            <div onClick={() => setShowProfile(!showProfile)}>
+              <FaAngleDown
+                className={`text-grey w-[10px] h-[27px] ml-[10px] ${
+                  showProfile && "rotate-180"
+                }`}
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className={`relative w-full mb-[100px] md:hidden ${
+            !showProfile && "hidden"
+          }`}
+        >
+          <div className="w-full bg-boxGrey flex flex-col items-center text-center py-[31px] rounded-[21px] absolute left-0 right-0 top-[20px]">
+            <img src="/assets/images/dp2.png" alt="" />
+            <div className="mt-[11px]">
+              <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
+                {isSuccess &&
+                  currentUser?.firstName + " " + currentUser?.lastName}
+              </p>
+              <p className="font-RubikRegular font-[300] text-[0.88rem] text-greyBlack leading-[17px] mt-[4px]">
+                UI/UX Designer
+              </p>
+              <p className="font-RubikRegular font-[400] text-[0.75rem] text-lightGrey leading-[14px] mt-[4px]">
+                No 20 Church Street Jos
+              </p>
+              <button className="mt-[19px] w-full font-RubikRegular font-[500] text-[0.88rem] text-black bg-white rounded-[5px] py-[8px]">
+                Edit Profile
+              </button>
             </div>
           </div>
         </div>
@@ -227,12 +255,13 @@ const Index = () => {
           </div>
         </div>
         {/* Right Panel */}
-        <div className="w-full md:w-[25%] md:pr-[44px]">
-          <div className="w-full bg-boxGrey flex flex-col items-center text-center py-[31px] rounded-[21px]">
+        <div className="w-full md:w-[25%] md:pr-[44px] ">
+          <div className="w-full bg-boxGrey md:flex flex-col items-center text-center py-[31px] rounded-[21px] hidden">
             <img src="/assets/images/dp2.png" alt="" />
             <div className="mt-[11px]">
               <p className="font-RubikRegular font-[500] text-[1.13rem] text-greyBlack leading-[21px]">
-                Uhembe Nelson
+                {isSuccess &&
+                  currentUser?.firstName + " " + currentUser?.lastName}
               </p>
               <p className="font-RubikRegular font-[300] text-[0.88rem] text-greyBlack leading-[17px] mt-[4px]">
                 UI/UX Designer
