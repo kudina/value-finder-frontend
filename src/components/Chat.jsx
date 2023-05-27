@@ -4,7 +4,7 @@ const Chat = () => {
   const chat = useSelector(openChat);
   return (
     <div
-      className={`flex gap-x-[15px] fixed top-[7rem] left-[45%] right-[6rem] bottom-0 bg-white z-20 shadow transition-all ease-in-out duration-300  ${
+      className={`flex gap-x-[15px] fixed top-[7rem] left-[45%] right-[1rem] bottom-0 bg-white z-20 shadow transition-all ease-in-out duration-300  ${
         chat ? "transform-none" : "transform translate-x-[118%]"
       }`}
     >
