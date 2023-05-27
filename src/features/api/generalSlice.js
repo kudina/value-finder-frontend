@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  accessToken: "",
+  openChat: false,
 };
 
 const generalSlice = createSlice({
   name: "general",
   initialState,
   reducers: {
-    setAccessToken: (state, action) => {
-      state.accessToken = action.payload;
+    setChat: (state, action) => {
+      state.openChat = !state.openChat;
     },
   },
 });
-export const { setAccessToken } = generalSlice.actions;
-export const accessToken = (state) => state.general.accessToken;
+export const { setChat } = generalSlice.actions;
+export const openChat = (state) => state.general.openChat;
 export default generalSlice.reducer;

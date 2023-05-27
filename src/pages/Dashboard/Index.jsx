@@ -1,30 +1,39 @@
 import { useState } from "react";
+import { setChat } from "../../features/api/generalSlice";
+import { useDispatch } from "react-redux";
+
 import {
   useGetCurrentUserQuery,
   useGetPostsQuery,
 } from "../../features/api/apiSlice";
 
 import { FaRegBell, FaRegEnvelope, FaAngleDown } from "react-icons/fa";
+import Chat from "../../components/Chat";
 
 const Index = () => {
   const [showProfile, setShowProfile] = useState(false);
   const { data: currentUser, isSuccess } = useGetCurrentUserQuery();
   const { data: posts } = useGetPostsQuery();
 
-  return (
-    <div className="px-[35px] md:px-0">
-      {/* Header */}
+  const dispatch = useDispatch();
 
+  return (
+    <div className="px-[35px] md:px-0 relative">
+      {/* Header */}
+      <Chat />
       <div className="flex flex-col md:flex-row md:justify-between items-center md:px-[36px] py-[36px]">
         <div className="font-RubikRegular font-[500] text-[1.56rem] leading-[30px] text-greyBlack">
           Welcome Back, Let’s find you a Job
         </div>
         <div className="flex  items-center mt-[35px] md:mt-0">
           <div className="md:w-[139px] flex  py-[5px]  md:border-r-lightGrey md:border-r-[1px]  mr-[4px] md:mr-[24px]">
-            <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[4px] md:mr-[10px]">
+            <div
+              className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[4px] md:mr-[10px] cursor-pointer"
+              onClick={() => dispatch(setChat())}
+            >
               <FaRegEnvelope className="text-orange font-[200] h-[1.5rem] md:h-[2rem] w-[0.8rem] md:w-[1.63rem]" />
             </div>
-            <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px]">
+            <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] cursor-pointer">
               <FaRegBell className="text-orange font-[200] h-[1.13rem] md:h-[1.63rem] w-[0.8rem] md:w-[1.5rem]" />
             </div>
           </div>
@@ -43,7 +52,7 @@ const Index = () => {
                 {isSuccess &&
                   currentUser?.firstName + " " + currentUser?.lastName}
               </p>
-              <p className="font-RubikRegular font-[400] text-[0.8rem] md:text-[1rem] leading-[19px] text-lightGrey break-words w-[90%] md:w-full">
+              <p className="font-RubikRegular font-[400] text-[0.8rem] md:text-[1rem] leading-[19px] text-lightGrey break-words w-[90%]">
                 {isSuccess && currentUser?.email}
               </p>
             </div>

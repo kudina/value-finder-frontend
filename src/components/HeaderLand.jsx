@@ -23,15 +23,13 @@ const HeaderLand = () => {
           </div>
           <div className="ml-[20px] lg:ml-[4rem]">
             <Link to={"/login"}>Login</Link>
-            
-              <Link
+
+            <Link
               to={"/register"}
               className="py-[10px] px-[20px] bg-orange text-white ml-[20px] rounded-[5px] drop-shadow h-[55px] w-[122px]"
             >
               SignUp
             </Link>
-            
-            
           </div>
         </div>
       </div>
@@ -68,10 +66,13 @@ const HeaderLand = () => {
           <Link to={"/"} className="mt-[20px]">
             Why Valuefinders
           </Link>
-          <Link to={"/"} className="mt-[20px]">
+          <Link to={"/login"} className="mt-[20px]">
             Login
           </Link>
-          <Link className="py-[5px] px-[12px] bg-orange text-white  rounded-[5px] drop-shadow mt-[20px]">
+          <Link
+            to={"/register"}
+            className="py-[5px] px-[12px] bg-orange text-white  rounded-[5px] drop-shadow mt-[20px]"
+          >
             SignUp
           </Link>
         </ul>
