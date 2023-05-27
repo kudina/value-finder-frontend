@@ -268,7 +268,7 @@ const Chat = () => {
             </div>
           </div>
           {/* Message Box */}
-          <div className="flex items-center justify-between fixed bottom-0 left-[66%] right-[9%] bottom-[10px]">
+          <div className="flex items-center justify-between fixed bottom-0 left-[66%] right-[9%] bottom-[10px] pb-[2rem]">
             <input
               type="text"
               placeholder="Message..."
