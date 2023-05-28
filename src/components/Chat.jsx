@@ -18,7 +18,7 @@ const Chat = () => {
       }`}
     >
       <div
-        className={`w-full md:w-[35%] pl-[21px] pr-[21px] md:pr-0 ${
+        className={`w-full md:w-[35%] pl-[21px] pr-[21px] md:block md:pr-0 ${
           wall && "hidden"
         }`}
       >
@@ -212,7 +212,7 @@ const Chat = () => {
 
       {/* Client's Wall */}
       <div
-        className={`w-full lg:w-[65%] px-[15px] md:px-0 ${list && "hidden"}`}
+        className={`w-full md:w-[65%] px-[15px] md:px-0 ${list && "hidden"}`}
       >
         <div className="flex items-center mt-[25px]">
           <img
@@ -331,7 +331,7 @@ const Chat = () => {
             </div>
           </div>
           {/* Message Box */}
-          <div className="flex items-center justify-between fixed bottom-0 left-0 md:left-[45%] right-0 md:right-[2%] bottom-[10px] pb-[2rem] px-[1rem] pt-[1rem] bg-boxGrey">
+          <div className="flex items-center justify-between fixed bottom-0 left-0 md:left-[45%] right-0 md:right-[20%] bottom-[10px] pb-[2rem] px-[1rem] pt-[1rem] bg-boxGrey">
             <input
               type="text"
               placeholder="Message..."
