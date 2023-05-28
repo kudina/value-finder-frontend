@@ -218,8 +218,8 @@ const Chat = () => {
           list && "hidden"
         }`}
       >
-        <div className="flex items-center justify-between">
-          <div className="flex items-center mt-[25px]">
+        <div className="flex items-center justify-between mt-[25px]">
+          <div className="flex items-center ">
             <img
               src="/assets/images/dp1.png"
               alt=""
@@ -230,7 +230,7 @@ const Chat = () => {
             </p>
           </div>
           <FaArrowLeft
-            className="h-[1.2rem] w-[1.2rem] text-greyBlack cursor-pointer md:hidden"
+            className="h-[1.2rem] w-[1.2rem] text-grey cursor-pointer md:hidden"
             onClick={() => {
               dispatch(setChatList(true));
               dispatch(setClientWall(false));
@@ -344,7 +344,7 @@ const Chat = () => {
             </div>
           </div>
           {/* Message Box */}
-          <div className="flex items-center justify-between fixed bottom-[-2%] left-0 md:left-[65%] right-0 md:right-[2%] s pb-[3rem] px-[1rem] pt-[1rem] bg-boxGrey">
+          <div className="flex items-center justify-between fixed bottom-[-2%] left-[4%] md:left-[67%] right-[6%] md:right-[2%] s pb-[3rem] px-[1rem] pt-[1rem] bg-boxGrey">
             <input
               type="text"
               placeholder="Message..."
