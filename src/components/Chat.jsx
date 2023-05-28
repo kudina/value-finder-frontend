@@ -6,6 +6,8 @@ import {
   setChatList,
 } from "../features/api/generalSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { FaArrowLeft } from "react-icons/fa";
+
 const Chat = () => {
   const chat = useSelector(openChat);
   const list = useSelector(chatList);
@@ -216,15 +218,24 @@ const Chat = () => {
           list && "hidden"
         }`}
       >
-        <div className="flex items-center mt-[25px]">
-          <img
-            src="/assets/images/dp1.png"
-            alt=""
-            className="h-[3rem] w-[3rem] rounded-[50%] mr-[20px]"
+        <div className="flex items-center justify-between">
+          <div className="flex items-center mt-[25px]">
+            <img
+              src="/assets/images/dp1.png"
+              alt=""
+              className="h-[3rem] w-[3rem] rounded-[50%] mr-[20px]"
+            />
+            <p className="font-RubikRegular font-[500] text-[1rem] leading-[12px] text-greyBlack">
+              Ogbonna Michael
+            </p>
+          </div>
+          <FaArrowLeft
+            className="h-[1.2rem] w-[1.2rem] text-greyBlack cursor-pointer md:hidden"
+            onClick={() => {
+              dispatch(setChatList(true));
+              dispatch(setClientWall(false));
+            }}
           />
-          <p className="font-RubikRegular font-[500] text-[1rem] leading-[12px] text-greyBlack">
-            Ogbonna Michael
-          </p>
         </div>
         <div className=" relative w-full h-[calc(100%-5rem)] overflow-y-auto scrollbar scrollbar-thumb-lightGrey scrollbar-w-[6px] scrollbar-track-grey scrollbar-rounded-[20px] bg-boxGrey rounded-[15px] mt-[15px] p-[12px] pb-[10rem]">
           {/* Chats */}
