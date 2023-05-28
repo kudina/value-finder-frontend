@@ -1,14 +1,27 @@
-import { openChat } from "../features/api/generalSlice";
-import { useSelector } from "react-redux";
+import {
+  openChat,
+  chatList,
+  clientWall,
+  setClientWall,
+  setChatList,
+} from "../features/api/generalSlice";
+import { useSelector, useDispatch } from "react-redux";
 const Chat = () => {
   const chat = useSelector(openChat);
+  const list = useSelector(chatList);
+  const wall = useSelector(clientWall);
+  const dispatch = useDispatch();
   return (
     <div
-      className={`flex gap-x-[15px] fixed top-[7rem] left-[45%] right-[1rem] bottom-0 bg-white z-20 shadow transition-all ease-in-out duration-300  ${
+      className={`flex gap-x-[15px] fixed top-[22%] left-0 md:left-[45%] right-0 md:right-[1rem] bottom-0 bg-white z-20 shadow transition-all ease-in-out duration-300  ${
         chat ? "transform-none" : "transform translate-x-[118%]"
       }`}
     >
-      <div className="w-[35%] pl-[21px]">
+      <div
+        className={`w-full md:w-[35%] pl-[21px] pr-[21px] md:pr-0 ${
+          wall && "hidden"
+        }`}
+      >
         {/* Search Box */}
         <input
           type="text"
@@ -16,9 +29,15 @@ const Chat = () => {
           className="h-[2.25rem] w-full border-[1px] border-green outline-none rounded-[5px] mb-[20px] mt-[40px] pl-[14px] font-RubikRegular font-[300] text-[0.88rem] text-black leading-[17px]"
         />
         {/* Chat Container */}
-        <div className="w-full h-[calc(100%-5rem)] overflow-y-auto scrollbar scrollbar-thumb-lightGrey scrollbar-w-[6px] scrollbar-track-grey scrollbar-rounded-[20px] pr-[5px]">
+        <div className="w-full h-[calc(100%-5rem)] overflow-y-auto scrollbar scrollbar-thumb-lightGrey scrollbar-w-[6px] scrollbar-track-grey scrollbar-rounded-[20px] pr-[10px] md:pr-[5px]">
           {/* Chat List */}
-          <div className="w-full">
+          <div
+            className="w-full"
+            onClick={() => {
+              dispatch(setClientWall(true));
+              dispatch(setChatList(false));
+            }}
+          >
             <div className="h-[3.94rem] w-full p-[5px] pl-[10px] mb-[20px] flex items-center rounded-[5px] relative bg-boxGrey text-black hover:bg-orange hover:text-white">
               <img
                 src="/assets/images/dp1.png"
@@ -34,7 +53,13 @@ const Chat = () => {
             </div>
           </div>
           {/* Chat List */}
-          <div className="w-full">
+          <div
+            className="w-full"
+            onClick={() => {
+              dispatch(setClientWall(true));
+              dispatch(setChatList(false));
+            }}
+          >
             <div className="h-[3.94rem] w-full p-[5px] pl-[10px] mb-[20px] flex items-center rounded-[5px] relative bg-boxGrey text-black hover:bg-orange hover:text-white">
               <img
                 src="/assets/images/dp1.png"
@@ -51,7 +76,13 @@ const Chat = () => {
           </div>
 
           {/* Chat List */}
-          <div className="w-full">
+          <div
+            className="w-full"
+            onClick={() => {
+              dispatch(setClientWall(true));
+              dispatch(setChatList(false));
+            }}
+          >
             <div className="h-[3.94rem] w-full p-[5px] pl-[10px] mb-[20px] flex items-center rounded-[5px] relative bg-boxGrey text-black hover:bg-orange hover:text-white">
               <img
                 src="/assets/images/dp1.png"
@@ -67,7 +98,13 @@ const Chat = () => {
             </div>
           </div>
           {/* Chat List */}
-          <div className="w-full">
+          <div
+            className="w-full"
+            onClick={() => {
+              dispatch(setClientWall(true));
+              dispatch(setChatList(false));
+            }}
+          >
             <div className="h-[3.94rem] w-full p-[5px] pl-[10px] mb-[20px] flex items-center rounded-[5px] relative bg-boxGrey text-black hover:bg-orange hover:text-white">
               <img
                 src="/assets/images/dp1.png"
@@ -83,7 +120,13 @@ const Chat = () => {
             </div>
           </div>
           {/* Chat List */}
-          <div className="w-full ">
+          <div
+            className="w-full "
+            onClick={() => {
+              dispatch(setClientWall(true));
+              dispatch(setChatList(false));
+            }}
+          >
             <div className="h-[3.94rem] w-full p-[5px] pl-[10px] mb-[20px] flex items-center rounded-[5px] relative bg-boxGrey text-black hover:bg-orange hover:text-white">
               <img
                 src="/assets/images/dp1.png"
@@ -99,7 +142,13 @@ const Chat = () => {
             </div>
           </div>
           {/* Chat List */}
-          <div className="w-full">
+          <div
+            className="w-full"
+            onClick={() => {
+              dispatch(setClientWall(true));
+              dispatch(setChatList(false));
+            }}
+          >
             <div className="h-[3.94rem] w-full p-[5px] pl-[10px] mb-[20px] flex items-center rounded-[5px] relative bg-boxGrey text-black hover:bg-orange hover:text-white">
               <img
                 src="/assets/images/dp1.png"
@@ -115,7 +164,13 @@ const Chat = () => {
             </div>
           </div>
           {/* Chat List */}
-          <div className="w-full">
+          <div
+            className="w-full"
+            onClick={() => {
+              dispatch(setClientWall(true));
+              dispatch(setChatList(false));
+            }}
+          >
             <div className="h-[3.94rem] w-full p-[5px] pl-[10px] mb-[20px] flex items-center rounded-[5px] relative bg-boxGrey text-black hover:bg-orange hover:text-white">
               <img
                 src="/assets/images/dp1.png"
@@ -131,7 +186,13 @@ const Chat = () => {
             </div>
           </div>
           {/* Chat List */}
-          <div className="w-full">
+          <div
+            className="w-full"
+            onClick={() => {
+              dispatch(setClientWall(true));
+              dispatch(setChatList(false));
+            }}
+          >
             <div className="h-[3.94rem] w-full p-[5px] pl-[10px] mb-[20px] flex items-center rounded-[5px] relative bg-boxGrey text-black hover:bg-orange hover:text-white">
               <img
                 src="/assets/images/dp1.png"
@@ -150,7 +211,9 @@ const Chat = () => {
       </div>
 
       {/* Client's Wall */}
-      <div className="w-[65%]">
+      <div
+        className={`w-full md:w-[65%] px-[15px] md:px-0 ${list && "hidden"}`}
+      >
         <div className="flex items-center mt-[25px]">
           <img
             src="/assets/images/dp1.png"
@@ -268,7 +331,7 @@ const Chat = () => {
             </div>
           </div>
           {/* Message Box */}
-          <div className="flex items-center justify-between fixed bottom-0 left-[68%] right-[3%] bottom-[10px] pb-[2rem]">
+          <div className="flex items-center justify-between fixed bottom-0 left-0 md:left-[68%] right-0 md:right-[3%] bottom-[10px] pb-[2rem] px-[1rem] pt-[1rem] bg-boxGrey">
             <input
               type="text"
               placeholder="Message..."
