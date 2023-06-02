@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { setChat } from "../../features/api/generalSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import {
   useGetCurrentUserQuery,
@@ -16,6 +17,7 @@ const Index = () => {
   const { data: posts } = useGetPostsQuery();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="px-[35px] md:px-0 relative">
@@ -345,7 +347,10 @@ const Index = () => {
               <p className="font-RubikRegular font-[400] text-[0.75rem] text-lightGrey leading-[14px] mt-[4px]">
                 No 20 Church Street Jos
               </p>
-              <button className="mt-[19px] w-full font-RubikRegular font-[500] text-[0.88rem] text-black bg-white rounded-[5px] py-[8px]">
+              <button
+                className="mt-[19px] w-full font-RubikRegular font-[500] text-[0.88rem] text-black bg-white rounded-[5px] py-[8px] cursor-pointer"
+                onClick={() => navigate("/profile")}
+              >
                 Edit Profile
               </button>
             </div>

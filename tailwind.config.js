@@ -6,6 +6,8 @@ module.exports = {
       boxShadow: {
         shadow1: "1px 1px 2px 1px rgba(0, 0, 0, 0.25)",
         shadow2: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        shadow3: "0px 4px 4px 4px rgba(230, 227, 227, 0.25)",
+        shadow4: "0px 4px 4px rgba(174, 169, 169, 0.25)",
       },
       backgroundImage: {
         hero2: "url('../public/assets/images/hero2.svg')",
