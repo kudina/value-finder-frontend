@@ -4,13 +4,14 @@ const initialState = {
   openChat: false,
   chatList: true,
   clientWall: false,
+  mobileMenu: false,
 };
 
 const generalSlice = createSlice({
   name: "general",
   initialState,
   reducers: {
-    setChat: (state, action) => {
+    setChat: (state) => {
       state.openChat = !state.openChat;
     },
     setChatList: (state, action) => {
@@ -19,10 +20,15 @@ const generalSlice = createSlice({
     setClientWall: (state, action) => {
       state.clientWall = action.payload;
     },
+    setMobileMenu: (state) => {
+      state.mobileMenu = !state.mobileMenu;
+    },
   },
 });
-export const { setChat, setChatList, setClientWall } = generalSlice.actions;
+export const { setChat, setChatList, setClientWall, setMobileMenu } =
+  generalSlice.actions;
 export const openChat = (state) => state.general.openChat;
 export const chatList = (state) => state.general.chatList;
 export const clientWall = (state) => state.general.clientWall;
+export const mobileMenu = (state) => state.general.mobileMenu;
 export default generalSlice.reducer;
