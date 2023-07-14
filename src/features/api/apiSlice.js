@@ -13,7 +13,7 @@ export const apiSlice = createApi({
       );
     },
   }),
-  // tagTypes: ["skill"],
+  tagTypes: ["User"],
   endpoints: (builder) => ({
     register: builder.mutation({
       query: (user) => ({
@@ -28,15 +28,32 @@ export const apiSlice = createApi({
         method: "POST",
         body: user,
       }),
+      invalidatesTags: ["User"],
     }),
     getCurrentUser: builder.query({
       query: () => ({
         url: "/user/api/v1/current-user",
       }),
+      providesTags: ["User"],
     }),
     getPosts: builder.query({
       query: () => ({
         url: "/post/api/v1/get-all-post",
+      }),
+    }),
+    createJob: builder.mutation({
+      query: (jobDetails) => ({
+        url: "/post/api/v1/create-post",
+        method: "POST",
+        body: jobDetails,
+      }),
+    }),
+
+    applyJob: builder.mutation({
+      query: (id) => ({
+        url: "/post/api/v1/update-post",
+        method: "POST",
+        body: id,
       }),
     }),
   }),
@@ -47,4 +64,6 @@ export const {
   useRegisterMutation,
   useGetCurrentUserQuery,
   useGetPostsQuery,
+  useCreateJobMutation,
+  useApplyJobMutation,
 } = apiSlice;

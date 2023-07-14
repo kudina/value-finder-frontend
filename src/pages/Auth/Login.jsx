@@ -81,16 +81,14 @@ const Login = () => {
             </button>
           </div>
           <div className="flex lg:justify-between mt-3 text-tc lg:flex-row  flex-col text-center">
-            <div className="lg:text-[16px] text-[14px]">
+            <div className="text-[14px]">
               Don’t have an account?{" "}
               <Link to={"/register"} className="text-green">
                 Sign up
               </Link>
             </div>
 
-            <div className="lg:text-[16px] text-[14px]">
-              Forgot password? Reset password
-            </div>
+            <div className="text-[14px]">Forgot password? Reset password</div>
           </div>
         </form>
       </div>

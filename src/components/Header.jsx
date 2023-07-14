@@ -5,24 +5,18 @@ import {
   mobileMenu,
 } from "../features/api/generalSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
-import {
-  useGetCurrentUserQuery,
-  useGetPostsQuery,
-} from "../features/api/apiSlice";
-import { FaRegBell, FaRegEnvelope, FaAngleDown } from "react-icons/fa";
+import { useGetCurrentUserQuery } from "../features/api/apiSlice";
+import { FaRegBell, FaRegEnvelope } from "react-icons/fa";
 
 const Header = () => {
   const [showProfile, setShowProfile] = useState(false);
   const { data: currentUser, isSuccess } = useGetCurrentUserQuery();
-  const { data: posts } = useGetPostsQuery();
   const mobile = useSelector(mobileMenu);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   return (
-    <div className="flex flex-col md:flex-row md:justify-between items-center md:px-[36px] py-[36px]">
+    <div className="flex flex-col md:flex-row md:justify-between items-center md:px-[36px] py-[10px]">
       <div
         className="fixed top-[5px] right-[5px] cursor-pointer z-20 md:hidden"
         onClick={() => {
@@ -35,19 +29,19 @@ const Header = () => {
           className="h-[30px] w-[30px]"
         />
       </div>
-      <div className="font-RubikRegular font-[500] text-[1.56rem] leading-[30px] text-greyBlack">
-        Welcome Back, Let’s find you a Job
+      <div className="font-RubikRegular font-[500] text-[1.2rem]  text-greyBlack max-w-[351px]">
+        Welcome Back
       </div>
       <div className="flex  items-center mt-[35px] md:mt-0">
         <div className="md:w-[139px] flex  py-[5px]  md:border-r-lightGrey md:border-r-[1px]  mr-[4px] md:mr-[24px]">
           <div
-            className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[4px] md:mr-[10px] cursor-pointer"
+            className="h-[2.13rem] md:h-[2.15rem] w-[2.13rem] md:w-[2.15rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] mr-[4px] md:mr-[10px] cursor-pointer"
             onClick={() => dispatch(setChat())}
           >
-            <FaRegEnvelope className="text-orange font-[200] h-[1.5rem] md:h-[2rem] w-[0.8rem] md:w-[1.63rem]" />
+            <FaRegEnvelope className="text-orange font-[200] h-[1.5rem] md:h-[1.53rem] w-[0.8rem] md:w-[1.15rem]" />
           </div>
-          <div className="h-[2.13rem] md:h-[3.13rem] w-[2.13rem] md:w-[3.13rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] cursor-pointer">
-            <FaRegBell className="text-orange font-[200] h-[1.13rem] md:h-[1.63rem] w-[0.8rem] md:w-[1.5rem]" />
+          <div className="h-[2.13rem] md:h-[2.15rem] w-[2.13rem] md:w-[2.15rem]  flex items-center justify-center rounded-[50%] border-green border-[2px] cursor-pointer">
+            <FaRegBell className="text-orange font-[200] h-[1.13rem] md:h-[1.53rem] w-[0.8rem] md:w-[1.15rem]" />
           </div>
         </div>
 
@@ -61,11 +55,11 @@ const Header = () => {
             className="h-[3.5rem] w-[3.5rem] md:h-[3.75rem] md:w-[3.75rem] mr-[4px] md:mr-[15px]"
           />
           <div>
-            <p className="font-RubikRegular font-[500] text-[1.2rem] md:text-[1.56rem] leading-[30px] text-greyBlack">
+            <p className="font-RubikRegular font-[500] text-[1rem] leading-[30px] text-greyBlack">
               {isSuccess &&
                 currentUser?.firstName + " " + currentUser?.lastName}
             </p>
-            <p className="font-RubikRegular font-[400] text-[0.8rem] md:text-[1rem] leading-[19px] text-lightGrey break-words w-[90%]">
+            <p className="font-RubikRegular font-[400] text-[0.7rem] leading-[16px] text-lightGrey">
               {isSuccess && currentUser?.email}
             </p>
           </div>
